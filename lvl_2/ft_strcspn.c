@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lcm.c                                              :+:      :+:    :+:   */
+/*   ft_strcspn.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpedro-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/26 15:57:48 by jpedro-f          #+#    #+#             */
-/*   Updated: 2024/12/26 15:57:49 by jpedro-f         ###   ########.fr       */
+/*   Created: 2025/01/02 16:53:17 by jpedro-f          #+#    #+#             */
+/*   Updated: 2025/01/02 16:53:18 by jpedro-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	lcm(unsigned int a, unsigned int b)
+#include <string.h>
+
+size_t	ft_strcspn(const char *s, const char *reject)
 {
-	int	n = 0;
-	
-	if (!a || !b)
-		return (0);
-	if (a > b)
-		n = a;
-	else 
-		n = b;
-	while(1)
+	int	i = 0;
+	int	k = 0;
+	int	count = 0;
+
+	while (s[i])
 	{
-		if (n % a == 0 && n % b == 0)
-			return n;
-		n++;
+		while (reject[k] && s[i] != reject[k])
+		{
+			i++;
+			k++;
+		}
+		if (reject[k] != '\0')
+			return (count);
+		k = 0;
+		i++;
+		count++;
 	}
+	return (count);
 }

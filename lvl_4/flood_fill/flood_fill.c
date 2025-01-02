@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lcm.c                                              :+:      :+:    :+:   */
+/*   flood_fill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpedro-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/26 15:57:48 by jpedro-f          #+#    #+#             */
-/*   Updated: 2024/12/26 15:57:49 by jpedro-f         ###   ########.fr       */
+/*   Created: 2025/01/02 17:06:37 by jpedro-f          #+#    #+#             */
+/*   Updated: 2025/01/02 17:06:38 by jpedro-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	lcm(unsigned int a, unsigned int b)
+#include "flood_fill.h"
+
+void flood_fill(char **tab, t_point size, t_point begin)
 {
-	int	n = 0;
 	
-	if (!a || !b)
-		return (0);
-	if (a > b)
-		n = a;
-	else 
-		n = b;
-	while(1)
-	{
-		if (n % a == 0 && n % b == 0)
-			return n;
-		n++;
-	}
 }
